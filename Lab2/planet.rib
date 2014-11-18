@@ -1,0 +1,38 @@
+##RenderMan RIB-Structure 1.0
+
+FrameBegin 1
+
+Display "awsomePlanet.jpeg" "file" "rgba"
+Format 640 480 -1 # Format 1024 768 -1 # 
+ShadingRate 1
+Projection "perspective" "fov" [30]
+FrameAspectRatio 1.33
+Identity
+
+# Default distant headlight
+LightSource "distantlight" 1
+
+# Camera transformation
+Translate 0 0 5
+
+WorldBegin
+
+Identity
+
+AttributeBegin
+
+  Color [1.0 0.6 0.0] # A nice orange color
+  # Displacement bounds, important for correct rendering
+  Attribute "displacementbound" "float sphere" [0.2] "coordinatesystem" ["shader"]
+  Surface "planet_surface"
+  Displacement "planet_displacement"
+  TransformBegin
+    Rotate 90 1 0 0   # Make +z point "up". The default camera coordinte system has +y up,
+    Sphere 1 -1 1 360 # but the Sphere primitive has its (u,v) poles on the z axis.
+  TransformEnd
+
+AttributeEnd
+
+WorldEnd
+
+FrameEnd
