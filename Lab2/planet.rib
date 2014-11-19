@@ -19,9 +19,9 @@ WorldBegin
 
 Identity
 
+# the earth
 AttributeBegin
 
-  Color [1.0 0.6 0.0] # A nice orange color
   # Displacement bounds, important for correct rendering
   Attribute "displacementbound" "float sphere" [0.2] "coordinatesystem" ["shader"]
   Surface "planet_surface"
@@ -31,6 +31,35 @@ AttributeBegin
     Sphere 1 -1 1 360 # but the Sphere primitive has its (u,v) poles on the z axis.
   TransformEnd
 
+AttributeEnd
+
+Identity
+
+# ozonosphere
+AttributeBegin
+  Color [0 0.12 1.0] # color of the sphere
+  Opacity 0.2 0.2 0.2  
+  # Displacement bounds, important for correct rendering
+  Attribute "displacementbound" "float sphere" [0.2] "coordinatesystem" ["shader"]
+  #Surface "planet_surface"
+  #Displacement "planet_displacement"
+  TransformBegin
+  	Scale 1.2 1.2 1.2 #scale the sphere up
+    Rotate 90 1 0 0   # Make +z point "up". The default camera coordinte system has +y up,
+    Sphere 1 -1 1 360 # but the Sphere primitive has its (u,v) poles on the z axis.
+  TransformEnd
+AttributeEnd
+
+# clouds
+AttributeBegin
+  Color [0.0 1.0 0.0] # color of the sphere
+  Opacity 0.2 0.2 0.2  
+  Surface "cloud_surface" "Ka" 0.0 "Kd" 1 "Ks" 0.1 "roughness" 0.1
+  TransformBegin
+  	Scale 1.03 1.03 1.03 #scale the sphere up
+    Rotate 90 1 0 0   # Make +z point "up". The default camera coordinte system has +y up,
+    Sphere 1 -1 1 360 # but the Sphere primitive has its (u,v) poles on the z axis.
+  TransformEnd
 AttributeEnd
 
 WorldEnd

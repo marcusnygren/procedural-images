@@ -12,16 +12,27 @@ surface planet_surface() {
   color ERRORCOLOR = color(1.0, 0.0, 0.0); // used if error found
 
   color terrainColor = 0.0; // decide which color to use
+
+  //light
+  normal Nf = faceforward(normalize(N), I);
+
   // deside if there is ocean
   if(displacement("isOcean", isOcean) == 1) {
     if (isOcean == 1.0) {
       terrainColor = oceanColor;
       terrainColor += 0.25*(noise(16*u,8*v)-0.5);
       terrainColor += 0.0625*0.5*(noise(64*P)-0.5);
+      terrainColor = terrainColor *specular(Nf, normalize(-I), 0.1); // add specular to the sea
     }
-    else {
+    else { // if there is land instead
+      point offsetPoint= P + 1.5*noise(2.0*P); // move so the cloud is not so regular
+      float noiseStructure = 0;
+      noiseStructure = noise(60.0*P + 2.5);
+      noiseStructure = mix(noiseStructure,float noise(40*P*offsetPoint+10),0.4);
+      
       terrainColor = greenColor;
-      terrainColor += 0.7*(noise(8*u,8*v)-0.5);
+      terrainColor = mix(terrainColor, color(2)*noiseStructure, 0.4);
+     // terrainColor += 0.7*(noise(8*u,8*v)-0.5);
     }
   }
   else {

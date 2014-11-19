@@ -12,7 +12,7 @@ displacement planet_displacement(output varying float elevation = 0.0; output va
   isOcean = 0.0; 
 
   // öka elevation så det blir "mer" om berg
-  elevation = elevation*elevation*elevation*5;
+  elevation = elevation*elevation*elevation*7;
 
   // set the output variable isOcean to true, if there is no elevation. 
   if (elevation == 0.0) {
