@@ -2,7 +2,7 @@
 
 FrameBegin 1
 
-Display "awsomePlanet.jpeg" "file" "rgba"
+Display "awsomePlanet.jpeg" "file" "rgb"
 Format 640 480 -1 # Format 1024 768 -1 # 
 ShadingRate 1
 Projection "perspective" "fov" [30]
@@ -10,7 +10,8 @@ FrameAspectRatio 1.33
 Identity
 
 # Default distant headlight
-LightSource "distantlight" 1
+#LightSource "distantlight" 1
+LightSource "distantlight" 1 "intensity" 1.0 "from" [0.1 0.1 0.1] "to" [1 -1 1]
 
 # Camera transformation
 Translate 0 0 5
@@ -38,7 +39,7 @@ Identity
 # ozonosphere
 AttributeBegin
   Color [0 0.12 1.0] # color of the sphere
-  Opacity 0.2 0.2 0.2  
+  Opacity 0.1 0.1 0.1  
   # Displacement bounds, important for correct rendering
   Attribute "displacementbound" "float sphere" [0.2] "coordinatesystem" ["shader"]
   #Surface "planet_surface"

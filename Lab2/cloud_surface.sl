@@ -15,7 +15,7 @@ surface cloud_surface() {
   noiseStructure = noise(600.0*P + 2.5);
   noiseStructure = mix(noiseStructure,float noise(400*P*offsetPoint+2),0.4);
   noiseStructure = mix(noiseStructure,float noise(60*P*offsetPoint),0.3);
-  noiseStructure = mix(noiseStructure,float noise(10*P*offsetPoint+3),0.3);
+  noiseStructure = mix(noiseStructure,float noise(10*P*offsetPoint+3),0.2);
   noiseStructure = mix(noiseStructure,float noise(2.5+P*offsetPoint),0.4);
 
   // opacity of the clouds

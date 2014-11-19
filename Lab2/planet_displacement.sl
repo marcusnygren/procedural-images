@@ -18,7 +18,7 @@ displacement planet_displacement(output varying float elevation = 0.0; output va
   if (elevation == 0.0) {
     isOcean = 1.0;
     // add a little bit noise to the ocean
-    elevation = 0.0625*0.5*(noise(64*P)-0.5);
+    elevation = 0.0625*0.25*(noise(128*P)-0.5);
     elevation = max(elevation, 0.0); // Clip negative values to zero
   }
 
