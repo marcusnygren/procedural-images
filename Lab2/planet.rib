@@ -5,8 +5,8 @@
 
 FrameBegin 1
 
-Display "awsomePlanet.jpeg" "file" "rgb"
-Format 640 480 -1 # Format 1024 768 -1 # 
+Display "earthSaysHello.jpeg" "file" "rgb"
+Format 1024 768 -1 # Format 640 480 -1 # 
 ShadingRate 1
 Projection "perspective" "fov" [30]
 FrameAspectRatio 1.33
@@ -57,7 +57,6 @@ AttributeBegin
     Sphere 1 -1 1 360 # but the Sphere primitive has its (u,v) poles on the z axis.
   TransformEnd
 AttributeEnd
-
 
 
 WorldEnd
