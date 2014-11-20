@@ -1,8 +1,11 @@
 // A simple SL surface shader to render a clouds
-surface cloud_surface() {
-// the code about the clouds in inspired by Johan Henriksson (johhe332@student.liu.se)
-// lab 2 during 2011 course. Tellus 2.0
+// Lab2, Marcus Nygren and Linnéa Mellblom,  marny568, linme882 2014
 
+surface cloud_surface() {
+  // the code about the clouds in inspired by Johan Henriksson (johhe332@student.liu.se)
+  // lab 2 during 2011 course. Tellus 2.0
+
+  // coefficients for the light
   float Ka = 1, Kd =1, Ks = 0.5;
   float roughness = 0.1;
   color specularcolor = 1;
