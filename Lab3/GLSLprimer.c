@@ -43,7 +43,7 @@
 #define PATH ""
 #endif
 
-#define TEXTUREFILENAME PATH "textures/earth2048.tga"
+#define TEXTUREFILENAME PATH "textures/earth2048ocean.tga"
 #define MESHFILENAME PATH "meshes/trex.obj"
 #define VERTEXSHADERFILENAME PATH "vertexshader.glsl"
 #define FRAGMENTSHADERFILENAME PATH "fragmentshader.glsl"
@@ -154,7 +154,7 @@ int main(int argc, char *argv[]) {
 
 	// Create geometry for rendering
 	soupInit(&myShape); // Initialize all fields to zero
-	soupCreateSphere(&myShape, 1.0, 50);
+	soupCreateSphere(&myShape, 1.0, 200);
 	//soupReadOBJ(&myShape, MESHFILENAME);
 	soupPrintInfo(myShape);
 
