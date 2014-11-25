@@ -5,7 +5,7 @@
 
 FrameBegin 1
 
-Display "earthSaysHello.jpeg" "file" "rgb"
+Display "earthSaysHello.tiff" "file" "rgb"
 Format 1024 768 -1 # Format 640 480 -1 # 
 ShadingRate 1
 Projection "perspective" "fov" [30]
